@@ -29,11 +29,4 @@ spec:
           command: ['/bin/sh', '-c']
           args:
             - /entrypoint.sh /usr/bin/tail -f /var/log/dmesg
-          volumeMounts:
-            - name: hdfs-config
-              mountPath: /etc/hadoop-custom-conf
       restartPolicy: Always
-      volumes:
-        - name: hdfs-config
-          hostPath:
-            path: /hdfs-config

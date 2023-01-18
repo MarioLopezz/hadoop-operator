@@ -109,17 +109,12 @@ spec:
               subPath: name
             - name: hdfs-env
               mountPath: /etc/environments
-            - name: hdfs-config
-              mountPath: /etc/hadoop-custom-conf
       restartPolicy: Always
       volumes:
         - name: nn-scripts
           configMap:
             name: hdfs-namenode-scripts
             defaultMode: 0744
-        - name: hdfs-config
-          hostPath:
-            path: /hdfs-config
         - name: hdfs-env
           configMap:
             name: hdfs-config

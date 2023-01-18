@@ -80,13 +80,8 @@ spec:
               subPath: name
             - name: hdfs-env
               mountPath: /etc/environments
-            - name: hdfs-config
-              mountPath: /etc/hadoop-custom-conf
       restartPolicy: Always
       volumes:
-        - name: hdfs-config
-          hostPath:
-            path: /hdfs-config
         - name: hdfs-env
           configMap:
             name: hdfs-config
